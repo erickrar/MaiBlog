@@ -1,5 +1,4 @@
-<fmt:message key="site.pagenotfound.description" var="errorPageDescription" />
-<tags:header title="${errorPageTitle}" description="${errorPageDescription}" />
+<tags:header title="${errorPageTitle}"  />
 
 <div class="page-header">
 <h1>${errorPageTitle}</h1>
