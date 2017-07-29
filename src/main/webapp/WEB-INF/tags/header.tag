@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="http://www.maino.com.br/wp-content/uploads/2017/05/Favicon16_Maino.png"/> 	
+    <link rel="shortcut icon" href="<c:url value="/resources/imgs/fav.png"/>"/> 	
 
   <title>
 <c:set var="fullTitle" value="${title} - ${defaulTitle}" />
