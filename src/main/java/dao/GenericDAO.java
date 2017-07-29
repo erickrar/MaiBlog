@@ -28,7 +28,8 @@ public abstract class GenericDAO {
 	protected Connection getConnection(){
 		try {
 				Class.forName("org.postgresql.Driver");
-				connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/maiblog","postgres","postgres");
+				connection = DriverManager.getConnection("jdbc:postgresql://ec2-23-23-244-83.compute-1.amazonaws.com:5432/d3odhv4ovkkr6v","kufgywgczrcfqx",
+						"c4e184338888e83ad568024ed0de37e184bdc8eb68b451422f777e2d03e01c02");
 
 		} catch (Exception e) {
 			e.printStackTrace();
