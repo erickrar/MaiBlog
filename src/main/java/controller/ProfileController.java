@@ -64,6 +64,7 @@ public class ProfileController {
 			LOG.info("-------------END----------------");
 			result.redirectTo(IndexController.class).index();
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
 			e.printStackTrace();
 			result.redirectTo(ErrorController.class).errorpage();
 		}
