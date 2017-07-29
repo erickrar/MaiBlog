@@ -47,8 +47,6 @@ public class ProfileController {
 	@Post
 	public void insert(Profile user,@NotEmpty String password,@NotEmpty String confirmPassword){
 		try {
-			validator.addIf((Strings.isEmpty(password) || Strings.isEmpty(confirmPassword)),new I18nMessage("password", "error.confirm.password"));
-			validator.addIf(!password.equals(confirmPassword),new I18nMessage("password", "error.confirm.password"));
 			user.addPassword(password);
 			validator.validate(user);
 			validator.addIf(users.containsUserWithLogin(user.getLogin()) 
