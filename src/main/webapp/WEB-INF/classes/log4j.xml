@@ -8,7 +8,7 @@
 		</layout>
 	</appender>
 
-	<appender name="file" class="org.apache.log4j.RollingFileAppender">
+	<appender name="file" class="org.apache.log4j.ConsoleAppender">
 		<param name="append" value="true" />
 		<param name="maxFileSize" value="15MB" />
 		<param name="maxBackupIndex" value="10" />
@@ -18,7 +18,7 @@
 		</layout>
 	</appender>
 
-	<appender name="erros" class="org.apache.log4j.RollingFileAppender">
+	<appender name="erros" class="org.apache.log4j.ConsoleAppender">
 		<param name="append" value="true" />
 		<param name="maxFileSize" value="15MB" />
 		<param name="maxBackupIndex" value="10" />
