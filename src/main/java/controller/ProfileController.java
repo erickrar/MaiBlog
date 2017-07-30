@@ -17,6 +17,7 @@ import br.com.caelum.vraptor.view.Results;
 import dao.ProfileDAO;
 import entity.LoggedProfile;
 import entity.Profile;
+import util.FastI18nMessage;
 import util.Strings;
 
 @Controller
@@ -48,11 +49,6 @@ public class ProfileController {
 	public void insert(Profile user,@NotEmpty String password,@NotEmpty String confirmPassword){
 		try {
 			user.addPassword(password);
-			validator.validate(user);
-			validator.addIf(users.containsUserWithLogin(user.getLogin()) 
-					,new I18nMessage("login", "erro.already.exists.login"));
-
-			validator.onErrorUsePageOf(this).signup();
 			users.insert(user);
 
 			LOG.info("New user!");
@@ -62,6 +58,7 @@ public class ProfileController {
 			LOG.info(String.format("User email: %s", user.getEmail()));
 			LOG.info(String.format("User login: %s", user.getLogin()));
 			LOG.info("-------------END----------------");
+			result.include("messages",FastI18nMessage.getMessage("user.success.insert"));
 			result.redirectTo(IndexController.class).index();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
